@@ -1,4 +1,7 @@
+# Default ignored folders
+__pycache__/
+.idea/*
+venv/*
+
 # Default ignored files
-/.idea/*
-/venv/*
 *.pyc
