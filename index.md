@@ -1,11 +1,10 @@
-# ![icone-angolackers](app/static/img/logo/favicon_io/favicon-32x32.png)ngolackers-msg
+# ![icone-angolackers](app/static/img/logo/favicon_io/favicon-32x32.png)ngolackers
 
-    projeto de nacionalidade angolana sem fins lucrativos
-    e que visa manter a inter-comunicação de jovens estudantes
-    mais segura e de pouco gasto..
+[<img alt="logo-angolackers" align="center" src="app/static/img/logo/05.png">](#)
 
-![logo-angolackers](app/static/img/logo/05.png)
+    exercitando a criacao de RESTFUL-APIs 
 
 ---
 
 &copy; 2021 [Angolackers Academy](#)
+&trade; [ArtesGC](https://artesgc.home.blog)
