@@ -1,4 +1,4 @@
-# ![icone-angolackers](app/static/img/logo/favicon_io/favicon-32x32.png)ngolackers
+# Angolackers
 
 [<img alt="logo-angolackers" align="center" src="app/static/img/logo/05.png">](#)
 
