@@ -2,7 +2,7 @@
 
 [<img alt="logo-angolackers" align="center" src="app/static/img/logo/05.png">](https://angolackers-academy.github.io/api)
 
-    exercitando a criacao de RESTFUL-APIs 
+    exercitando a criacao de RESTFUL-APIs com Python-Flask
 
 ---
 
