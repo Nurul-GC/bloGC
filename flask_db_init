@@ -1,0 +1,8 @@
+# este arquivo contem as indicacoes para a auto-criacao dapasta
+# './migrations'
+# onde estarao as configuracoes gerais da db
+
+# abra o terminal e navegue ate a pasta atual
+# e defina primeiro a constante FLASK_APP='index.py'
+# para o projecto atual e em seguida execute o comando
+# `flask db init`
