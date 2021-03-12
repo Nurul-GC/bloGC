@@ -1,32 +1,45 @@
 {% extends "base.html" %}
 
 {%block head%}
-<!-- Aqui irão as tags extra do head from login -->
-<style>
-    #main-login{
-        background-color: black;
-        color: red;
-    }
-</style>
+    <!-- Aqui irão as tags extra do head from login -->
+    <style>
+        #main-login{
+            background-color: yellow;
+            color: red;
+            text-align: center;
+            width: 500px;
+            padding: 20px;
+            margin: auto;
+            border-radius: 5px;
+        }
+    </style>
 {%endblock head%}
 
 {% block content %}
-<main id="main-login">
-    <h1>Sign In</h1>
-    <form action="" method="post">
-        {{ form.hidden_tag() }}
-        <p>
-        {{ form.username.label }}<br>
-        {{ form.username(size=32) }}
-        </p>
 
-        <p>
-        {{ form.password.label }}<br>
-        {{ form.password(size=32) }}
-        </p>
+    <main id="main-login">
+        <h1>Inicie Sessão</h1>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
 
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p>{{ form.submit() }}</p>
-    </form>
-</main>
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=20) }}
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=20) }}
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+
+            <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </main>
 {% endblock content %}
