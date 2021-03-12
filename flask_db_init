@@ -6,3 +6,9 @@
 # e defina primeiro a constante FLASK_APP='index.py'
 # para o projecto atual e em seguida execute o comando
 # `flask db init`
+
+# The `flask db migrate` command
+# does not make any changes to the database
+# it just generates the migration script.
+# To apply the changes to the database
+# the `flask db upgrade` command must be used.
