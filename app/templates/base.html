@@ -100,8 +100,14 @@
     <div class="dropdown">
         <button class="dropbtn">Menu</button>
         <div class="dropdown-content">
-          <a href="{{ url_for('index') }}">Pagina Inicial</a>
-          <a href="{{ url_for('login') }}">Inicio Sessão</a>
+            <a href="{{ url_for('index') }}">Pagina Inicial</a>
+            {%if form.username %}
+                <a href="{{ url_for('signin') }}" hidden>Cadastrar-se</a>
+                <a href="{{ url_for('login') }}" hidden>Inicio Sessão</a>
+            {%else%}
+                <a href="{{ url_for('signin') }}">Cadastrar-se</a>
+                <a href="{{ url_for('login') }}">Inicio Sessão</a>
+            {%endif%}
         </div>
     </div>
 

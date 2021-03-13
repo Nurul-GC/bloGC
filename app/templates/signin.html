@@ -1,0 +1,59 @@
+{%extends "base.html"%}
+
+{%block head%}
+    <!-- Aqui irão as tags extra do head from login -->
+    <style>
+        #main-signin{
+            background-color: yellow;
+            color: red;
+            text-align: center;
+            width: 500px;
+            padding: 20px;
+            margin: auto;
+            border-radius: 5px;
+        }
+    </style>
+{%endblock head%}
+
+{%block content%}
+    <main id="main-signin">
+        <h1>Cadastrar-se</h1>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=20) }}
+                {% for error in form.username.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+
+            <p>
+                {{ form.useremail.label }}<br>
+                {{ form.useremail(size=30) }}
+                {% for error in form.useremail.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+
+            <p>
+                {{ form.password1.label }}<br>
+                {{ form.password1(size=20) }}
+                {% for error in form.password1.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+
+            <p>
+                {{ form.password2.label }}<br>
+                {{ form.password2(size=20) }}
+                {% for error in form.password2.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+
+            <p>{{ form.submit() }}</p>
+        </form>
+    </main>
+{%endblock content%}
