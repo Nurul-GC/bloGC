@@ -4,15 +4,15 @@
 
     exercitando a criacao de RESTFUL-APIs com Python-Flask
 
-> para a execução do programa
-abra o seu terminal (prompt-comandos)
-e digite:
-...: `mkdir Angolackers_Academy`
-...: `cd Angolackers_Academy`
-...: `git clone https://github.com/Angolackers-Academy/bloGC.git`
-em seguida:
-...: `cd bloGC`
-...: `python3 index.py`
+> para a execução do programa \
+abra o seu terminal (prompt-comandos) \
+e digite: \
+...: `mkdir Angolackers_Academy` \
+...: `cd Angolackers_Academy` \
+...: `git clone https://github.com/Angolackers-Academy/bloGC.git` \
+em seguida: \
+...: `cd bloGC` \
+...: `python3 index.py` \
 e por fim abra o seu navegador no endereço: `https>://localhost:5000/`
 
 ---
