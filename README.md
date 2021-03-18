@@ -2,11 +2,25 @@
 
 [<img alt="logo-angolackers" align="center" src="app/static/img/logo/05.png">](https://angolackers-academy.github.io/intro "Pressione a imagem para conhecer a Angolackers!")
 
-    exercitando a criacao de RESTFUL-APIs com Python-Flask
+    creating little blog using Flask-Framework
+    criando um pequeno blog usando Flask-Framework
+    
+---
 
+*English*
+> to run the program \
+open your terminal (prompt-commands) and type: \
+...: `mkdir Angolackers_Academy` \
+...: `cd Angolackers_Academy` \
+...: `git clone https://github.com/Angolackers-Academy/bloGC.git` \
+then: \
+...: `cd bloGC` \
+...: `python3 index.py` \
+and finally open your browser at the address: `https://localhost:5000/`
+
+*Português*
 > para a execução do programa \
-abra o seu terminal (prompt-comandos) \
-e digite: \
+abra o seu terminal (prompt-comandos) e digite: \
 ...: `mkdir Angolackers_Academy` \
 ...: `cd Angolackers_Academy` \
 ...: `git clone https://github.com/Angolackers-Academy/bloGC.git` \
