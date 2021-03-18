@@ -1,6 +1,6 @@
-{%extends "base.html"%}
+{% extends "base.html" %}
 
-{%block head%}
+{% block head %}
 
     <!-- Aqui irão as tags extra do head from index -->
 
@@ -8,4 +8,29 @@
         alert('Oláa seja muito bem-vindo! 😊');
     </script>
 
-{%endblock head%}
+    <style>
+        #main-index{
+            background-color: yellow;
+            color: red;
+            text-align: center;
+            width: 1000px;
+            padding: 20px;
+            margin: auto;
+            border-radius: 5px;
+        }
+    </style>
+
+{% endblock head %}
+
+{% block content %}
+
+    <main id="main-index">
+        <h1>Bem-Vido Companheiro...</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit hac non, cum magna vulputate habitasse turpis proin primis accumsan curae inceptos, litora lobortis justo ad donec tortor aliquet platea. Ornare sed semper imperdiet nisi aliquet rutrum torquent lacus, curabitur vestibulum ante mattis euismod vel ultricies taciti, aptent ut nec quisque dui laoreet non. Tincidunt ut fames et ac dis nec vel tellus consequat, lectus ultrices orci arcu libero felis natoque parturient habitant, facilisis maecenas cursus urna faucibus aliquam venenatis dictumst. Nostra faucibus viverra varius integer at nisl felis potenti curabitur porttitor torquent, et curae netus elementum metus est mi ultrices arcu praesent. Cursus libero nascetur eu a donec vehicula faucibus tincidunt, vitae lacus commodo scelerisque felis nibh eget, curae conubia etiam ut iaculis aliquet facilisi. Tempus feugiat rhoncus praesent dignissim integer lectus mus cum ut netus nulla neque, tincidunt ultrices pellentesque aliquet eget placerat id auctor varius sapien vitae. Euismod sodales cursus orci ullamcorper faucibus luctus iaculis nostra, primis himenaeos fusce semper sollicitudin at etiam eu, commodo natoque augue tristique mi suspendisse interdum.</p>
+        <p>Aptent a rutrum fermentum varius ligula himenaeos luctus, sem iaculis eros lobortis in vehicula faucibus, arcu eu elementum malesuada posuere pharetra. Ultricies suscipit consequat cras velit nascetur lacinia quam, vel himenaeos tincidunt justo hac cubilia libero, lacus quisque lobortis augue interdum viverra. Hac viverra quis cursus purus est torquent vivamus pellentesque volutpat feugiat congue, eget porttitor praesent nascetur rutrum sodales gravida porta conubia vel, integer nisi interdum proin mauris mus dis facilisis senectus ante.</p>
+        <p>Enim lobortis mus cursus sed malesuada, consequat porttitor purus facilisi lacus eget, dis diam pharetra ante. Urna justo parturient habitasse pulvinar eros cubilia ornare vitae, iaculis aliquam facilisi vivamus nascetur tellus maecenas, praesent habitant taciti cras sociosqu curabitur vehicula. Velit senectus fermentum semper quam montes, pellentesque ad dui commodo, convallis purus euismod justo.</p>
+        <p>Fames etiam mauris placerat sodales eros habitasse, non tempus rhoncus felis blandit semper, magna per ac metus dictumst. Venenatis massa at interdum accumsan sociosqu risus vivamus, magnis turpis vitae rutrum porta integer, malesuada cum quis facilisis quam eros. Egestas nunc at cum dapibus ullamcorper praesent congue suspendisse natoque blandit magnis, nulla pellentesque posuere sociosqu ultricies ut arcu euismod libero conubia. Scelerisque urna ridiculus nec sapien habitasse litora ornare convallis conubia et quis in eu hac, id libero imperdiet dignissim eleifend etiam aptent sollicitudin dapibus tempus condimentum quisque. Cum magnis cras dui erat accumsan mattis eu nisl congue placerat habitasse auctor sollicitudin, sagittis ridiculus consequat id praesent eros dignissim non risus venenatis phasellus condimentum.</p>
+        <p>Nulla congue porttitor dapibus vitae quisque, luctus sodales in diam ad accumsan, bibendum parturient dignissim varius. Ullamcorper pharetra nam ultricies leo venenatis bibendum platea iaculis nascetur, faucibus lectus accumsan integer malesuada convallis lobortis parturient sociis diam, aliquet mattis tellus habitasse est torquent senectus nisi. Fames turpis gravida vehicula nunc accumsan urna sollicitudin dapibus, non iaculis rhoncus elementum purus tellus velit dignissim aptent, facilisi montes cursus sociis dis auctor volutpat.</p>
+    </main>
+
+{% endblock content %}

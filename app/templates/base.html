@@ -28,15 +28,22 @@
     
     <style>
         body{
-            background-color: rgb(0, 0, 0);
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
+            background: rgb(100, 100, 100); /* Old browsers */
+            background: -moz-linear-gradient(-45deg,  rgb(100, 100, 100) 0%, rgb(14,14,14) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg,  rgb(100, 100, 100) 0%,rgb(14,14,14) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg,  rgb(100, 100, 100) 0%,rgb(14,14,14) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
             color: white;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
         #header main{
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
             background-color: yellow;
             text-align: center;
             width: 400px;
-            padding: 20px;
+            padding: 10px 10px 10px 10px;
             margin: auto;
             border-radius: 10px;
             box-shadow: 2px 2px 2px white;
@@ -49,41 +56,34 @@
             font-size: medium;
             color: rgb(250, 83, 83);
         }
-        /* Dropdown Button */
-        .dropbtn {
-            background-color: yellow;
-            color: red;
-            padding: 16px;
-            font-size: 16px;
-            border-radius: 10px;
+        .header-menu{
+            text-align: center;
         }
-        /* The container <div> - needed to position the dropdown content */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        /* Dropdown Content (Hidden by Default) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #363535;
-            min-width: 160px;
-            box-shadow: 2px 2px 2px white;
-            z-index: 1;
-        }
-        /* Links inside the dropdown */
-        .dropdown-content a {
-            color: red;
-            padding: 12px 16px;
+        .header-menu a{
             text-decoration: none;
-            display: block;
+            color: red;
         }
-        /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {background-color: black;}
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {display: block;}
-        /* Change the background color of the dropdown button when the dropdown content is shown */
-        .dropdown:hover .dropbtn {background-color: #363535;}
+        .pagina-inicial{
+            width: auto;
+            height: 30px;
+            border-radius: 5px;
+            background-color: yellow;
+        }
+        .sobre{
+            width: auto;
+            height: 30px;
+            border-radius: 5px;
+            background-color: yellow;
+        }
+        .inicio-sessao{
+            width: auto;
+            height: 30px;
+            border-radius: 5px;
+            background-color: yellow;
+        }
+        .pagina-inicial:hover, .inicio-sessao:hover, .sobre:hover{
+            background-color: rgb(150, 150, 0);
+        }
     </style>
 
     <!-- Add extra tags to head -->
@@ -97,18 +97,12 @@
         </main>
     </div>
 
-    <div class="dropdown">
-        <button class="dropbtn">Menu</button>
-        <div class="dropdown-content">
-            <a href="{{ url_for('index') }}">Pagina Inicial</a>
-            {%if form.username %}
-                <a href="{{ url_for('signin') }}" hidden>Cadastrar-se</a>
-                <a href="{{ url_for('login') }}" hidden>Inicio Sessão</a>
-            {%else%}
-                <a href="{{ url_for('signin') }}">Cadastrar-se</a>
-                <a href="{{ url_for('login') }}">Inicio Sessão</a>
-            {%endif%}
-        </div>
+    <br>
+
+    <div class="header-menu">
+        <button type="reset" class="pagina-inicial" title="regressar a pagina-inicial!"><a href="{{ url_for('index') }}"><b>🏠 - Pagina Inicial</b></a></button>
+        <button class="sobre" title="acessar as informações do programa!"><a href="{{ url_for('about') }}"><b>⁉️ - Sobre</b></a></button>
+        <button class="inicio-sessao" title="fazer o inicio de sessão ou cadastrar-se!"><a href="{{ url_for('login') }}"><b>☑️ - Iniciar Sessão</b></a></button>
     </div>
 
     <hr>

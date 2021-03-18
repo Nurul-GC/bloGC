@@ -2,6 +2,7 @@ from flask import Flask
 from app.config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_login import LoginManager
 
 # importando bootstrap para o projecto
 # from flask_bootstrap import Bootstrap
@@ -13,6 +14,10 @@ app = Flask(__name__)
 # definindo as configuracoes do projecto
 # importando-as do modulo config
 app.config.from_object(Config)
+
+# definindo a instancia que configurara
+# o login do usuario
+login = LoginManager(app)
 
 # definindo as configuracoes de db
 # para o projecto
