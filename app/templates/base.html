@@ -18,8 +18,10 @@
     que faça parte do pacote do projecto
     basta escrever as tags do seguinte jeito..
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/01.css') }}">
-    <script src="{{ url_for('static', filename='js/01.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='pasta_do_arquivo/nome_arquivo.extensao') }}">
+    <script src="{{ url_for('static', filename='pasta_do_arquivo/nome_arquivo.extensao') }}"></script>
+
+    ATT: todos os arquivos extras do pacote devem estar na dentro da pasta `app/static/...`
 
     Mas para o servidor flask é preferivel usar paginas dinâmicas
     quer dizer adicionar as orientações CSS e código JS dentro da própria página html
@@ -88,7 +90,7 @@
     <div id="header">
         <main>
             <h1><a href="#">Angolackers Academy</a></h1>
-            <p style="text-align: center;">Academia de Génios e Aladins</p>
+            <p>Academia de Génios e Aladins</p>
         </main>
     </div>
 
