@@ -1,14 +1,10 @@
 # ![icone-angolackers](app/static/img/logo/favicon_io/favicon-32x32.png)ngolackers
 
-<p style="text-align: center;">
-
 [![logo-angolackers](app/static/img/logo/05.png)](https://angolackers-academy.github.io/intro "Pressione a imagem para conhecer a Angolackers!")
 
 |creating little blog using Flask-Framework|
 |---|
 |criando um pequeno blog usando Flask-Framework|
-
-</p>
 
 ---
 
