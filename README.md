@@ -13,7 +13,7 @@ e digite: \
 em seguida: \
 ...: `cd bloGC` \
 ...: `python3 index.py` \
-e por fim abra o seu navegador no endereço: `https>://localhost:5000/`
+e por fim abra o seu navegador no endereço: `https://localhost:5000/`
 
 ---
 
