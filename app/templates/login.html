@@ -23,6 +23,9 @@
 {%endblock head%}
 
 {% block content %}
+
+    <!-- Aqui irão as tags extras do body from login -->
+
     {% if form.username.data != None %}
         <h1>Relaxa <b>{{ form.username.data }}</b> já tens a sessão iniciada...</h1>
     {% else %}
@@ -53,4 +56,5 @@
             <button class="botao-cadastro"><a href="{{ url_for('signin') }}">Cadastrar-se</a></button>
         </main>
     {% endif %}
+    
 {% endblock content %}

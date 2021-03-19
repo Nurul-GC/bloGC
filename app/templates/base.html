@@ -1,3 +1,8 @@
+<!--
+    SEM MOTIVO PARA SE PREOCUPAR COM ESSE FICHEIRO
+    NA VERDADE ELE SERVE COMO TEMPLATE PARA TODOS
+    OS OUTROS .html DO PROJECTO...
+ -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -9,8 +14,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Link for icon -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo/favicon_io/favicon.ico') }}" type="image/x-icon">
+    <!-- Links for icon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon/favicon-16x16.png') }}">
 
     <!--
     Exemplo: 
@@ -36,6 +44,7 @@
             background: linear-gradient(135deg,  rgb(100, 100, 100) 0%,rgb(14,14,14) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: white;
         }
         #header main{
             background-color: yellow;
