@@ -18,6 +18,7 @@ app.config.from_object(Config)
 # definindo a instancia que configurara
 # o login do usuario
 login = LoginManager(app)
+login.login_view = 'login'
 
 # definindo as configuracoes de db
 # para o projecto

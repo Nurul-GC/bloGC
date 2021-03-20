@@ -13,11 +13,16 @@
             border-radius: 5px;
         }
         .botao-cadastro{
-            border-radius: 10;
+            border: 1px inset black;
+            border-radius: 5px;
+            background-color: yellow;
         }
         .botao-cadastro a{
             text-decoration: none;
             color: red;
+        }
+        .botao-cadastro:hover{
+            background-color: rgb(180, 180, 0);
         }
     </style>
 {%endblock head%}
@@ -30,6 +35,16 @@
         <h1>Relaxa <b>{{ form.username.data }}</b> já tens a sessão iniciada...</h1>
     {% else %}
         <main id="main-login">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <script>
+                            alert('{{ message }}');
+                        </script>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
             <h1>Inicie Sessão</h1>
             <form action="" method="post">
                 {{ form.hidden_tag() }}
@@ -56,5 +71,5 @@
             <button class="botao-cadastro"><a href="{{ url_for('signin') }}">Cadastrar-se</a></button>
         </main>
     {% endif %}
-    
+
 {% endblock content %}

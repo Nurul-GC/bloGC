@@ -87,8 +87,14 @@
             border-radius: 5px;
             background-color: yellow;
         }
-        .pagina-inicial:hover, .inicio-sessao:hover, .sobre:hover{
-            background-color: rgb(150, 150, 0);
+        .termino-sessao{
+            width: auto;
+            height: 30px;
+            border-radius: 5px;
+            background-color: yellow;
+        }
+        .pagina-inicial:hover, .inicio-sessao:hover, .termino-sessao:hover, .sobre:hover{
+            background-color: rgb(180, 180, 0);
         }
     </style>
 
@@ -108,7 +114,12 @@
     <div class="header-menu">
         <button type="reset" class="pagina-inicial" title="regressar a pagina-inicial!"><a href="{{ url_for('index') }}"><b>🏠 - Pagina Inicial</b></a></button>
         <button class="sobre" title="acessar as informações do programa!"><a href="{{ url_for('about') }}"><b>⁉️ - Sobre</b></a></button>
-        <button class="inicio-sessao" title="fazer o inicio de sessão ou cadastrar-se!"><a href="{{ url_for('login') }}"><b>☑️ - Iniciar Sessão</b></a></button>
+        {% if current_user.is_anonymous %}
+            <button class="inicio-sessao" title="fazer o inicio de sessão ou cadastrar-se!"><a href="{{ url_for('login') }}"><b>☑️ - Iniciar Sessão</b></a></button>
+        {% else %}
+            <button class="termino-sessao" title="terminar o inicio de sessão!"><a href="{{ url_for('logout') }}"><b>⭕ - Terminar Sessão</b></a></button>
+        {% endif %}
+        
     </div>
 
     <hr>
@@ -116,14 +127,6 @@
     <div class="container">
         <!-- Add extra tags to body -->
         {% block content %} {% endblock content %}
-
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {%for message in messages%}
-                    <h1>{{message}}</h1>
-                {%endfor%}
-            {% endif %}
-        {% endwith %}
     </div>
 
     <!-- Optional JavaScript -->
