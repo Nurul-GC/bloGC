@@ -5,8 +5,9 @@ e digitar no terminal:
 *** linux ***
     ~$: python3 ./index.py
 *** windows ***
-    C/localizacao/do/script/:py index.py
+    C:/localizacao/do/script/> py index.py
 """
+
 from app import app
 
 if __name__ == '__main__':

@@ -13,7 +13,7 @@ def index():
     try:
         return render_template("index.html", title='Angolackers-BloGC')
     except Exception as error:
-        flash(f"{error} 😥")
+        flash(f"{error}... 😥")
         return render_template("extrainfo.html", title='Angolackers-Erro')
 
 
