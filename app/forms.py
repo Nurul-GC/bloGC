@@ -11,6 +11,7 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Lembrar-me')
     submit = SubmitField('Entrar')
 
+
 class SigninForm(FlaskForm):
     """formulario para signin"""
     username = StringField('Nome Usuario', validators=[DataRequired()])
@@ -23,7 +24,7 @@ class SigninForm(FlaskForm):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
             raise ValidationError('Por favor use um nome de usuario diferente.')
-    
+
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:

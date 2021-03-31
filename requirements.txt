@@ -1,0 +1,10 @@
+WTForms>=2.2.1
+Werkzeug>=0.14.1
+Flask>=1.0.2
+alembic>=1.0.0.dev0
+SQLAlchemy>=1.2.18
+flask_sqlalchemy
+flask_migrate
+flask_login
+flask_wtf
+email_validator
