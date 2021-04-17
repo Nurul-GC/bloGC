@@ -7,7 +7,7 @@ from flask_login import LoginManager
 # importando bootstrap para o projecto
 # from flask_bootstrap import Bootstrap
 
-# definindo a instancia do flask
+# definindo a instância do flask
 # com as definicoes do projecto
 app = Flask(__name__)
 
@@ -15,8 +15,8 @@ app = Flask(__name__)
 # importando-as do modulo config
 app.config.from_object(Config)
 
-# definindo a instancia que configurara
-# o login do usuario
+# definindo a instância que configurara
+# o login do usuário
 login = LoginManager(app)
 login.login_view = 'login'
 
@@ -25,7 +25,7 @@ login.login_view = 'login'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# iniciando a instancia do bootstrap
+# iniciando a instância do bootstrap
 # Bootstrap(app=app)
 
 from app import routes, models
