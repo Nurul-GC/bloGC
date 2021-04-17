@@ -26,21 +26,18 @@
     que faça parte do pacote do projecto
     basta escrever as tags do seguinte jeito..
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='pasta_do_arquivo/nome_arquivo.extensao') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pasta_do_arquivo/nome_arquivo.extensão') }}">
     <script src="{{ url_for('static', filename='pasta_do_arquivo/nome_arquivo.extensao') }}"></script>
 
     ATT: todos os arquivos extras do pacote devem estar na dentro da pasta `app/static/...`
 
-    Mas para o servidor flask é preferivel usar paginas dinâmicas
+    Mas para o servidor flask é preferível usar paginas dinâmicas
     quer dizer adicionar as orientações CSS e código JS dentro da própria página html
-    evitando um possivel (404 ou 302) em relação aos links..
+    evitando um possível (404 ou 302) em relação aos links..
     -->
     
     <style>
         body{
-            background: rgb(100, 100, 100); /* Old browsers */
-            background: -moz-linear-gradient(-45deg,  rgb(100, 100, 100) 0%, rgb(14,14,14) 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(-45deg,  rgb(100, 100, 100) 0%,rgb(14,14,14) 100%); /* Chrome10-25,Safari5.1-6 */
             background: linear-gradient(135deg,  rgb(100, 100, 100) 0%,rgb(14,14,14) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
