@@ -8,10 +8,10 @@ from flask_login import LoginManager
 # from flask_bootstrap import Bootstrap
 
 # definindo a instância do flask
-# com as definicoes do projecto
+# com as definições do projecto
 app = Flask(__name__)
 
-# definindo as configuracoes do projecto
+# definindo as configurações do projecto
 # importando-as do modulo config
 app.config.from_object(Config)
 
@@ -20,7 +20,7 @@ app.config.from_object(Config)
 login = LoginManager(app)
 login.login_view = 'login'
 
-# definindo as configuracoes de db
+# definindo as configurações de db
 # para o projecto
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
