@@ -1,4 +1,4 @@
-# este arquivo contem as indicacoes para a auto-criacao dapasta
+# este arquivo contem as indicacoes para a auto-criacao da pasta
 # './migrations'
 # onde estarao as configuracoes gerais da db
 

@@ -1,4 +1,4 @@
 #! /usr/bin/bash
-cd ./
+cd ..
 export FLASK_APP='index.py'
 /usr/bin/python3 -m flask db upgrade
