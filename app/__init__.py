@@ -1,7 +1,8 @@
 from flask import Flask
 from app.config import Config
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from flask_migrate import Migrate, MigrateCommand
+from flask_script import Manager
 from flask_login import LoginManager
 
 # importando bootstrap para o projecto
@@ -24,6 +25,9 @@ login.login_view = 'login'
 # para o projecto
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+
+manager = Manager(app=app)
+manager.add_command('db', MigrateCommand)
 
 # iniciando a instância do bootstrap
 # Bootstrap(app=app)

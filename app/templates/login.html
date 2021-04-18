@@ -24,6 +24,11 @@
         .botao-cadastro:hover{
             background-color: rgb(180, 180, 0);
         }
+        .erro{
+            color: red;
+            font-family: cambria;
+            font-size: small;
+        }
     </style>
 {%endblock head%}
 
@@ -51,17 +56,17 @@
 
                 <p>
                     {{ form.username.label }}<br>
-                    {{ form.username(size=20) }}
+                    {{ form.username(size=20, placeholder='ex: Seu Nome') }}
                     {% for error in form.username.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
+                    <span class="erro">[{{ error }}]</span>
                     {% endfor %}
                 </p>
 
                 <p>
                     {{ form.password.label }}<br>
-                    {{ form.password(size=20) }}
+                    {{ form.password(size=20, placeholder='ex: abc_123') }}
                     {% for error in form.password.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
+                    <span class="erro">[{{ error }}]</span>
                     {% endfor %}
                 </p>
 

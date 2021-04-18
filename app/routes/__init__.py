@@ -27,15 +27,11 @@ def about():
 def signin():
     signinForm = SigninForm()
     if signinForm.validate_on_submit():
-        user = User()
-        user.set_username(name=signinForm.username.data)
-        user.set_useremail(email=signinForm.user_email.data)
-        user.set_password(password=signinForm.password1.data)
-
+        user = User(name=signinForm.username.data, email=signinForm.user_email.data, password=signinForm.password1.data)
         sessao = db.create_session(user.__getattr__())
         sessao.add(user)
         sessao.commit()
-        flash('Cadastro Foi Bem Sucedido, Agora inicie para ter acesso a sua conta! 😉')
+        flash('Cadastro Foi Bem Sucedido, Agora inicie sessão para ter acesso a sua conta! 😉')
         return redirect(url_for('login'))
     return render_template("signin.html", title="Angolacker-Cadastro", form=signinForm)
 
