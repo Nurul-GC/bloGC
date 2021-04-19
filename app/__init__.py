@@ -5,9 +5,6 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from flask_login import LoginManager
 
-# importando bootstrap para o projecto
-# from flask_bootstrap import Bootstrap
-
 # definindo a instância do flask
 # com as definições do projecto
 app = Flask(__name__)

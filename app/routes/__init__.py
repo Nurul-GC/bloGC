@@ -27,10 +27,14 @@ def about():
 def signin():
     signinForm = SigninForm()
     if signinForm.validate_on_submit():
-        user = User(name=signinForm.username.data, email=signinForm.user_email.data, password=signinForm.password1.data)
-        sessao = db.create_session(user.__getattr__())
-        sessao.add(user)
-        sessao.commit()
+        username = request.form['username']
+        useremail = request.form['user_email']
+        password = request.form['password1']
+
+        user = User(name=username, email=useremail, password=password)
+        db.session.add(user)
+        db.session.commit()
+
         flash('Cadastro Foi Bem Sucedido, Agora inicie sessão para ter acesso a sua conta! 😉')
         return redirect(url_for('login'))
     return render_template("signin.html", title="Angolacker-Cadastro", form=signinForm)
@@ -40,15 +44,21 @@ def signin():
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
+
     loginForm = LoginForm()
     if loginForm.validate_on_submit():
-        user = User.query.filter_by(username=loginForm.username.data).first()
-        if user is None or not user.check_password(loginForm.password.data):
+        username = request.form['username']
+        password = request.form['password']
+        user = User.query.filter_by(username=username).first()
+
+        if user is None or not user.check_password(password):
             flash('Nome de usuário ou Senha incorrectos... 😥')
             return redirect(url_for('signin'))
-        flash(f'Inicio-Sessão Bem Sucedido, Bem-Vindo {loginForm.username.data}... 😄')
+
+        flash(f'Inicio-Sessão Bem Sucedido, Bem-Vindo {username}... 😄')
         login_user(user, remember=loginForm.remember_me.data)
         next_page = request.args.get('next')
+
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
