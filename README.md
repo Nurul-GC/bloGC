@@ -1,8 +1,10 @@
 <div align="center">
 
-# ![icone-angolackers](static/img/favicon/favicon-32x32.png)ngolackers
+# ![icone-angolackers](blogc/static/img/favicon/favicon-32x32.png)ngolackers
 
-[![logo-angolackers](static/img/logo/05.png)](https://angolackers-academy.github.io/intro "Pressione a imagem para conhecer a Angolackers!")
+[![logo-angolackers](blogc/static/img/logo/05.png)](https://angolackers-academy.github.io/intro "Pressione a imagem para conhecer a Angolackers!")
+
+</div>
 
 |creating a little blog using Flask-Framework|
 |---|
@@ -11,10 +13,10 @@
 ---
 
 `Demo`
-![demo-01](static/img/01.png)
-![demo-02](static/img/02.png)
-![demo-03](static/img/03.png)
-![demo-04](static/img/04.png)
+![demo-01](blogc/static/img/demo/01.png)
+![demo-02](blogc/static/img/demo/02.png)
+![demo-03](blogc/static/img/demo/03.png)
+![demo-04](blogc/static/img/demo/04.png)
 
 ---
 
