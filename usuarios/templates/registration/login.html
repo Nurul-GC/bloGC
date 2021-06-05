@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% load bootstrap4 %}
+
+{% block page_header %}
+<h2>Inicie sessão para fazer uso deste serviço!</h2>
+{% endblock page_header %}
+
+{% block content %}
+
+{% if form.errors %}
+<script type="text/javascript">
+  alert(
+    "O seu nome de usuario e senha não correspondem. Por favor tente novamente!"
+  );
+</script>
+{% endif %}
+
+<form method="post" action="{% url 'usuarios:login' %}">
+  {% csrf_token %} {% bootstrap_form form %}
+  
+  {% buttons %}
+  <button name="submit" class="btn btn-primary">Entrar</button>
+  {% endbuttons %}
+
+  <input type="hidden" name="next" value="{% url 'blogc:posts' %}" />
+</form>
+
+<p>
+  <b><i>Ainda nao tem uma conta?</i></b>
+  <button class="btn btn-primary">
+    <a style="color: white;" href="{% url 'usuarios:cadastro' %}">Registre-se ja</a>
+  </button>
+</p>
+
+{% endblock content %}
