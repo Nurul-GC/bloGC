@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}{% endblock extra_head %}
+
+{% block page_header %}
+  <h2>Publicacoes</h2>
+{% endblock page_header %}
+
+{% block content %}
+
+  {% for post in posts %}
+  <h3><a href="{{ post.get_absolute_url }}">{{ post.titulo }}</a></h3>
+  <p>Publicado em {{ post.data_publicacao }} por {{ post.autor }}</p>
+  {{ post.corpo|truncatewords:30|linebreaks }}
+  {% endfor %}
+
+{% endblock content %}
