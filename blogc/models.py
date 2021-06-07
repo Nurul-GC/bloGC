@@ -10,6 +10,11 @@ class PublicadosManager(models.Manager):
         return super(PublicadosManager, self).get_queryset().filter(estado='publicado')
 
 
+class RascunhosManager(models.Manager):
+    def get_queryset(self):
+        return super(RascunhosManager, self).get_queryset().filter(estado='rascunho')
+
+
 class Publicacao(models.Model):
     STATUS_CHOICES = (
         ('rascunho', 'Rascunho'),
@@ -17,6 +22,7 @@ class Publicacao(models.Model):
     )
     objects = models.Manager()
     publicados = PublicadosManager()
+    rascunhos = RascunhosManager()
 
     titulo = models.CharField(max_length=250)
     subtitulo = models.SlugField(max_length=250, unique_for_date='data_publicacao')
@@ -35,4 +41,4 @@ class Publicacao(models.Model):
         return self.titulo
 
     def get_absolute_url(self):
-        return reverse('blogc:details', args=[self.subtitulo])
+        return reverse('blogc:detalhes', args=[self.subtitulo])
