@@ -4,7 +4,7 @@ from blogc import views
 app_name = 'blogc'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('posts/', views.posts, name='posts'),
-    path('post/<slug:_subtitulo>/', views.details, name='details'),
-    path('post/share/<int:post_id>/', views.share, name='share')
+    path('publicados/', views.publicados, name='publicados'),
+    path('rascunhos/', views.rascunhos, name='rascunhos'),
+    path('publicacao/<slug:_subtitulo>/', views.detalhes, name='detalhes'),
 ]
