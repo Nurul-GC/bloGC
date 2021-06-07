@@ -8,13 +8,25 @@
 
 {% block content %}
 
+{% if posts %}
   {% for post in posts %}
 <div style="background-color:gray; padding: 5px; border-radius: 3px">
   <h3><a href="{{ post.get_absolute_url }}">{{ post.titulo }}</a></h3>
-  <p>Publicado a {{ post.data_publicacao }} por {{ post.autor }}</p>
+  <small>
+    <i>Publicado a {{ post.data_publicacao }} por {{ post.autor }}</i> -
+    <b>{{ post.estado }}</b>
+  </small>
+  <hr>
   {{ post.corpo|truncatewords:30|linebreaks }}
 </div><br>
   {% endfor %}
   {% include "pagination.html" with page=posts %}
+{% else %}
+  <div style="background-color:gray; padding: 5px; border-radius: 3px">
+    <ul>
+      <li>Ainda nenhuma publicacao foi <b>efetuada</b>!</li>
+    </ul>
+  </div>
+{% endif %}
 
 {% endblock content %}
