@@ -1,0 +1,14 @@
+{% block content %}
+<hr>
+<small>
+  {% if page.has_previous %}
+  <a href="?page={{ page.previous_page_number }}">Anterior</a>
+  {% endif %}
+
+  <i>Pagina: {{ page.number }} de {{ page.paginator.num_pages }}.</i>
+
+  {% if page.has_next %}
+  <a href="?page={{ page.next_page_number }}">Proxima</a>
+  {% endif %}
+</small>
+{% endblock content %}

@@ -9,9 +9,12 @@
 {% block content %}
 
   {% for post in posts %}
+<div style="background-color:gray; padding: 5px; border-radius: 3px">
   <h3><a href="{{ post.get_absolute_url }}">{{ post.titulo }}</a></h3>
-  <p>Publicado em {{ post.data_publicacao }} por {{ post.autor }}</p>
+  <p>Publicado a {{ post.data_publicacao }} por {{ post.autor }}</p>
   {{ post.corpo|truncatewords:30|linebreaks }}
+</div><br>
   {% endfor %}
+  {% include "pagination.html" with page=posts %}
 
 {% endblock content %}
