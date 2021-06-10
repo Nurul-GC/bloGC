@@ -30,7 +30,10 @@
 </head>
 <body class="bg-dark">
 <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
-  <a class="navbar-brand" href="{% url 'blogc:index' %}">Angolackers - BloGC</a>
+  <a class="navbar-brand" href="{% url 'blogc:index' %}">
+    <img sizes="32x32" src="{% static '/img/favicon/favicon-32x32.png' %}">
+    BloGC
+  </a>
 
   <button
       class="navbar-toggler"
@@ -87,8 +90,7 @@
 </main><br>
 <footer class="bg-light text-center border" style="padding:5px; position: bottom;">
     <small>
-      Direitos Autorais Reservados &copy; 2021
-      <a href="https://github.com/Nurul-GC">Nurul-GC</a><br>
+      Direitos Autorais Reservados &copy; 2021 <br>
       &trade;<a href="https://github.com/Angolackers-Academy">Angolackers</a>
     </small>
 </footer>
