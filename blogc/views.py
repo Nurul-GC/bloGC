@@ -52,6 +52,7 @@ def rascunhos(request):
     return render(request, 'publicacao/lista.html', {'page': pagina, 'posts': publicacoes, 'user': request.user})
 
 
+@login_required()
 def detalhes(request, _subtitulo):
     publicacao = get_object_or_404(Publicacao, subtitulo=_subtitulo, estado='publicado')
     comentario = publicacao.comentarios.filter(ativo=True)
