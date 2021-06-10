@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blogc.models import Publicacao
+from blogc.models import Publicacao, Comentario
 
 
 # Register your models here.
@@ -12,3 +12,10 @@ class PulicacaoAdmin(admin.ModelAdmin):
     raw_id_fields = ('autor',)
     date_hierarchy = 'data_publicacao'
     ordering = ('estado', 'data_publicacao')
+
+
+@admin.register(Comentario)
+class ComentarioAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'email', 'post', 'criado', 'ativo')
+    list_filter = ('ativo', 'criado', 'atualizado')
+    search_fields = ('nome', 'email', 'corpo')
