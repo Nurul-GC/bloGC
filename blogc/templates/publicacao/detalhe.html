@@ -1,17 +1,64 @@
 {% extends 'base.html' %}
+{% load static %}{% load bootstrap4 %}
 
 {% block extra_head %}{% endblock extra_head %}
 
 {% block page_header %}
   <h2>{{ post.titulo }}</h2>
-  <i>{{ post.descricao }}</i>
+  <small>
+  <i>
+    <b>Descricao:</b> {{ post.descricao }} <br>
+    <b>Estado:</b> {{ post.estado }} -
+    {% with comments.count as total_comments %}
+    {{ total_comments }} comentario{{ total_comments|pluralize }}
+    {% endwith %} <br>
+    <b>Detalhes:</b> Publicado a {{ post.data_publicacao }} por <b>{{ post.autor }}</b>
+  </i>
+  </small>
 {% endblock page_header %}
 
 {% block content %}
+  <div class="card">
+    <span class="card-header"><h4>Conteudo</h4></span>
+    <span class="card-body" style="background-color: gray;">{{ post.corpo|linebreaks }}</span>
+  </div>
+  <br>
 
-  <small>Publicado a {{ post.data_publicacao }} por {{ post.autor }}</small>
-  <div style="background-color: gray; padding: 5px; border-radius: 3px">
-    {{ post.corpo|linebreaks }}
-  </div><br>
+  <div class="card">
+    <span class="card-header">
+      <h4>Comentarios</h4>
+    </span>
+    <span class="card-body" style="background-color: gray;">
+      {% for comment in comments %}
+      <b><i title="{{ comment.email }}">{{ comment.nome }}</i> - {{ comment.criado }}</b>
+      <p>{{ comment.corpo|linebreaks }}</p><hr>
+      {% empty %}
+      <h5><i>(Ainda sem comentarios para esta publicacao)</i></h5>
+      {% endfor %}
+    </span>
+  </div>
+  <br>
+
+  {% if new_comment %}
+    <script>alert("O seu comentario foi publicado.");</script>
+  {% else %}
+  <div class="card">
+    <span class="card-header"><h4>Adicionar novo comentario</h4></span>
+    <form class="card-body" style="background-color: gray;" method="post">
+      {% csrf_token %}
+      {% bootstrap_form commentform %}
+      {% buttons %}
+      <input class="btn btn-secondary" type="submit" value="Adicionar comentario">
+      {% endbuttons %}
+    </form>
+  </div>
+  {% endif %}
+
+  <hr>
+  {% if post.estado == 'publicado' %}
+  <a class="btn btn-secondary" href="{% url 'blogc:publicados' %}" style="color:white;">Voltar</a>
+  {% else %}
+  <a class="btn btn-secondary" href="{% url 'blogc:rascunhos' %}" style="color:white;">Voltar</a>
+  {% endif %}
 
 {% endblock %}

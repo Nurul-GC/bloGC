@@ -1,15 +1,28 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static %}{% load bootstrap4 %}
 
 {% block extra_head %}{% endblock extra_head %}
 
 {% block page_header %}
-<h1>Bem vindo ao BloGC..</h1>
-<small>Powered by:</small>
+<h2>Bem Vindo <b>{{ user.username }}</b>..</h2>
 {% endblock page_header %}
 
 {% block content %}
-<div align="center">
-  <img src="{% static 'img/logo/05.png' %}" alt="angolackers-logo" style="border-radius: 5px;">
+
+{% if new_post %}
+<script>alert("A sua publicacao foi bem sucedida.");</script>
+{% endif %}
+
+<div class="card">
+  <span class="card-header text-center"><h3>Nova Publicacao</h3></span>
+  <form class="card-body" style="background-color:gray;" method="post">
+  {% csrf_token %}
+  {% bootstrap_form postform %}
+
+  {% buttons %}
+  <input class="btn btn-secondary" type="submit" value="Publicar">
+  {% endbuttons %}
+  </form>
 </div>
+
 {% endblock content %}

@@ -1,14 +1,20 @@
 {% block content %}
 <hr>
 <small>
+  <div class="text-center">
+    <i>Pagina: {{ page.number }} de {{ page.paginator.num_pages }}</i>
+  </div>
+
   {% if page.has_previous %}
-  <a class="btn btn-secondary" href="?page={{ page.previous_page_number }}">Anterior</a>
+  <div class="text-left">
+    <a class="btn btn-secondary" href="?page={{ page.previous_page_number }}">Anterior</a>
+  </div>
   {% endif %}
 
-  <i>Pagina: {{ page.number }} de {{ page.paginator.num_pages }}.</i>
-
   {% if page.has_next %}
-  <a class="btn btn-secondary" href="?page={{ page.next_page_number }}">Proxima</a>
+  <div class="text-right">
+    <a class="btn btn-secondary" href="?page={{ page.next_page_number }}">Proxima</a>
+  </div>
   {% endif %}
 </small>
 {% endblock content %}
