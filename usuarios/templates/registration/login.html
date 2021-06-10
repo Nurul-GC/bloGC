@@ -18,7 +18,7 @@
   {% csrf_token %} {% bootstrap_form form %}
   
   {% buttons %}
-  <button name="submit" class="btn btn-primary">Entrar</button>
+  <button name="submit" class="btn btn-secondary">Entrar</button>
   {% endbuttons %}
 
   <input type="hidden" name="next" value="{% url 'blogc:publicados' %}" />
@@ -26,7 +26,7 @@
 
 <p>
   <b><i>Ainda nao tem uma conta?</i></b>
-  <button class="btn btn-primary">
+  <button class="btn btn-secondary">
     <a style="color: white;" href="{% url 'usuarios:cadastro' %}">Registre-se ja</a>
   </button>
 </p>
