@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block extra_head %}
 <script type="text/javascript">
     alert("Sessao terminada com sucesso, Muito Obrigado pela visita!");
@@ -9,21 +8,21 @@
 {% endblock extra_head %}
 
 {% block page_header %}
-<div align="center"><img src="{% static '/img/logo/04.png' %}"
-     alt="logo-angolackers" style="border-radius: 50%;"></div>
-<h3>Escolha uma opcao para continuar...</h3>
+<div align="center">
+  <img src="{% static '/img/logo/07.png' %}" alt="logo-angolackers" style="border-radius: 50px;">
+</div>
 {% endblock page_header %}
 
-
 {% block content %}
-
-<ul>
+<div class="card">
+  <span class="card-header"><h3>Escolha uma opcao para continuar</h3></span>
+  <span class="card-body" style="background-color:gray;">
     <li>
-        <a href="{% url 'blogc:index' %}">Voltar a pagina inicial</a>
+      <a href="{% url 'blogc:index' %}">Voltar a pagina inicial</a>
     </li>
     <li>
-        <a href="{% url 'usuarios:login' %}">Iniciar uma nova sessao</a>
+      <a href="{% url 'usuarios:login' %}">Iniciar uma nova sessao</a>
     </li>
-</ul>
-
+  </span>
+</div>
 {% endblock content %}
