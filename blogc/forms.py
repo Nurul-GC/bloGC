@@ -15,9 +15,10 @@ class ComentarioForm(forms.ModelForm):
 class PublicacaoForm(forms.ModelForm):
     class Meta:
         model = Publicacao
-        fields = ('titulo', 'subtitulo', 'descricao', 'autor', 'corpo', 'estado')
+        fields = ('titulo', 'subtitulo', 'descricao', 'autor', 'corpo', 'estado', 'tags')
         labels = {'estado': 'Defina o estado da sua publicacao:',
-                  'autor': 'Selecione o autor para a publicacao:'}
+                  'autor': 'Selecione o autor para a publicacao:',
+                  'tags': 'Defina a(s) etiqueta(s) para a publicacao:'}
         prepopulated_fields = {'subtitulo': 'titulo'}
         widgets = {'titulo': forms.TextInput({'placeholder': 'Digite um titulo para a sua publicacao'}),
                    'subtitulo': forms.TextInput({'placeholder': 'Digite o subtitulo para a sua publicacao'}),
