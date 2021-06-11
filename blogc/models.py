@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth.models import User
+from taggit.managers import TaggableManager
 
 
 # Create your models here.
@@ -23,10 +24,12 @@ class Publicacao(models.Model):
     objects = models.Manager()
     publicados = PublicadosManager()
     rascunhos = RascunhosManager()
+    tags = TaggableManager()
 
     titulo = models.CharField(max_length=250)
     subtitulo = models.SlugField(max_length=250, unique_for_date='data_publicacao',
-                                 help_text='<b style="color:black;">O subtitulo deve ser igual ao titulo, mas transcrito em minusculas e com espacos substituidos por (-)(hifens).'
+                                 help_text='<b style="color:black;">O subtitulo deve ser igual ao titulo, '
+                                           'mas transcrito em minusculas e com espacos substituidos por (-)(hifens).'
                                            '<br>Ex: nome-para-a-publicacao.</b>')
     descricao = models.CharField(max_length=250, unique_for_date='data_publicacao')
     autor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blogc_publicacoes')
