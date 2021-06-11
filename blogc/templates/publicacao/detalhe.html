@@ -4,7 +4,12 @@
 {% block extra_head %}{% endblock extra_head %}
 
 {% block page_header %}
-  <h2>{{ post.titulo }}</h2>
+  <h2>
+  {{ post.titulo }}
+  {% if edit %}
+  <a class="btn btn-secondary" href="{% url 'blogc:editar' post.subtitulo %}">Editar</a>
+  {% endif %}
+  </h2>
   <small>
   <i>
     <b>Descricao:</b> {{ post.descricao }} <br>
@@ -12,7 +17,12 @@
     {% with comments.count as total_comments %}
     {{ total_comments }} comentario{{ total_comments|pluralize }}
     {% endwith %} <br>
-    <b>Detalhes:</b> Publicado a {{ post.data_publicacao }} por <b>{{ post.autor }}</b>
+    <b>Detalhes:</b> Publicado a {{ post.data_publicacao }} por <b>{{ post.autor }}</b><br>
+    <b>Etiquetas:</b>
+    {% for tag in post.tags.all %}
+    "{{ tag.name }}"
+    {% if not forloop.last %}, {% endif %}
+    {% endfor %}
   </i>
   </small>
 {% endblock page_header %}
