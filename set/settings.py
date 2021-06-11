@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'usuarios',
     'blogc',
     'bootstrap4',
+    'taggit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
