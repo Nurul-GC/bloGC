@@ -5,6 +5,7 @@ from taggit.models import Tag
 
 from blogc.forms import ComentarioForm, PublicacaoForm
 from blogc.models import Publicacao
+from blogc.tags import total_posts, show_latest_posts, get_most_commented_posts
 
 
 # Create your views here.
@@ -20,7 +21,10 @@ def index(request):
     return render(request, 'index.html',
                   {'user': request.user,
                    'postform': formulario_publicacao,
-                   'new_post': nova_publicacao})
+                   'new_post': nova_publicacao,
+                   'latest_posts': show_latest_posts,
+                   'total_posts': total_posts,
+                   'most_commented_posts': get_most_commented_posts})
 
 
 def publicados(request, tag_subtitulo=None):
@@ -31,7 +35,7 @@ def publicados(request, tag_subtitulo=None):
         tag = get_object_or_404(Tag, slug=tag_subtitulo)
         lista_publicacoes = lista_publicacoes.filter(tags__in=[tag])
 
-    paginator = Paginator(lista_publicacoes, 3)  # 5 publicados in each page
+    paginator = Paginator(lista_publicacoes, 3)  # 3 publicados in each page
     pagina = request.GET.get('page')
     try:
         publicacoes = paginator.page(pagina)
@@ -41,7 +45,9 @@ def publicados(request, tag_subtitulo=None):
     except EmptyPage:
         # If page is out of range deliver last page of results
         publicacoes = paginator.page(paginator.num_pages)
-    return render(request, 'publicacao/lista.html', {'page': pagina, 'posts': publicacoes, 'user': request.user})
+    return render(request, 'publicacao/lista.html',
+                  {'page': pagina, 'posts': publicacoes,
+                   'user': request.user, 'tag': tag})
 
 
 def rascunhos(request, tag_subtitulo=None):
@@ -52,7 +58,7 @@ def rascunhos(request, tag_subtitulo=None):
         tag = get_object_or_404(Tag, slug=tag_subtitulo)
         lista_publicacoes = lista_publicacoes.filter(tags__in=[tag])
 
-    paginator = Paginator(lista_publicacoes, 3)  # 5 publicados in each page
+    paginator = Paginator(lista_publicacoes, 3)  # 3 publicados in each page
     pagina = request.GET.get('page')
     try:
         publicacoes = paginator.page(pagina)
