@@ -8,14 +8,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap">
+  <!--link href="{% static '/fonts/NotoSerif-Bold.ttf' %}" rel="stylesheet">
+  <link href="{% static '/fonts/NotoSerif-BoldItalic.ttf' %}" rel="stylesheet">
+  <link href="{% static '/fonts/NotoSerif-Italic.ttf' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static '/fonts/NotoSerif-Regular.ttf' %}"-->
+
   <script src="{% static '/js/bootstrap.js' %}"></script>
   <script src="{% static '/js/jquery-3.5.1.js' %}"></script>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static '/img/favicon/apple-touch-icon.png' %}">
-  <link rel="icon" sizes="32x32" href="{% static '/img/favicon/favicon-32x32.png' %}" type="image/png">
-  <link rel="icon" sizes="16x16" href="{% static '/img/favicon/favicon-16x16.png' %}" type="image/png">
-  <link rel="shortcut icon" href="{% static '/img/favicon/favicon.ico' %}" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180"
+        href="{% static '/img/favicon/apple-touch-icon.png' %}">
+  <link rel="icon" sizes="32x32"
+        href="{% static '/img/favicon/favicon-32x32.png' %}" type="image/png">
+  <link rel="icon" sizes="16x16"
+        href="{% static '/img/favicon/favicon-16x16.png' %}" type="image/png">
+  <link rel="shortcut icon" type="image/x-icon"
+        href="{% static '/img/favicon/favicon.ico' %}">
   <!--link rel="manifest" href="{% static '/img/favicon/site.webmanifest' %}"-->
+
   {% if title %}
   <title>{{ title }}</title>
   {% else %}
@@ -23,7 +35,15 @@
   {% endif %}
 
   <style>
-    body{font-family: times;}
+    @font-face {
+      src: {% static '/fonts/NotoSerif-Regular.ttf' %};
+      font-family: 'Noto Serif';
+      font-weight: normal;
+    }
+    body{
+      font-family: 'Noto Serif', serif;
+      font-size: 14px;
+    }
   </style>
 
   {% block extra_head %}{% endblock extra_head %}
@@ -84,11 +104,13 @@
 </nav>
 <main role="main" class="container bg-light"
       style="padding: 20px; border-radius: 5px;">
-  <div class="pb-2 mb-2 border-bottom">
+  <div>
     {% block page_header %}{% endblock page_header %}
+    <hr>
+    {% block content %}{% endblock content %}
   </div>
-  <div>{% block content %}{% endblock content %}</div>
-</main><br>
+</main>
+<br>
 <footer class="bg-light text-center border" style="padding:5px; position: bottom;">
     <small>
       Direitos Autorais Reservados &copy; 2021

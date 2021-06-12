@@ -4,6 +4,8 @@
 {% block extra_head %}{% endblock extra_head %}
 
 {% block page_header %}
+<h2>Bem vindo ao BloGC</h2>
+<small>Powered by:</small>
 <div align="center">
   <img src="{% static '/img/logo/07.png' %}" alt="logo-angolackers" style="border-radius: 50px;">
 </div>
@@ -11,12 +13,41 @@
 
 {% block content %}
 
+<div class="card">
+  <span class="card-header"><h3>Publicacoes recentes</h3></span>
+  <span class="card-body" style="background-color:gray;">
+    <ol>
+      {% for post in latest_posts %}
+      <li>
+        <a href="{{ post.get_absolute_url }}">{{ post }}</a>
+        <br>{{ post.data_publicacao }} por <b>{{ post.autor}}</b>
+      </li>
+      {% endfor %}
+    </ol>
+    <small><b>Ja foram partilhadas {{ total_posts }} publicacoes no total.</b></small>
+  </span>
+</div><br>
+
+<div class="card">
+  <span class="card-header"><h3>Publicacoes mais comentadas</h3></span>
+  <span class="card-body" style="background-color:gray;">
+    <ol>
+      {% for post in most_commented_posts %}
+      <li>
+        <a href="{{ post.get_absolute_url }}">{{ post.titulo }}</a><br>
+        {{ post.total_comentarios }} comentarios
+      </li>
+      {% endfor %}
+    </ol>
+  </span>
+</div><br>
+
 {% if new_post %}
 <script>alert("A sua publicacao foi bem sucedida.");</script>
 {% endif %}
 
 <div class="card">
-  <span class="card-header text-center"><h3>Nova Publicacao</h3></span>
+  <span class="card-header"><h3>Nova Publicacao</h3></span>
   <form class="card-body" style="background-color:gray;" method="post">
   {% csrf_token %}
   {% bootstrap_form postform %}

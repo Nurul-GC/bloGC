@@ -31,21 +31,24 @@
     <b>{{ post.corpo|linebreaks }}</b>
     <hr>
     <p>
-  Etiquetas:
-  {% for tag in post.tags.all %}
-  <b>
-    <a href="{% url 'blogc:tags' tag.slug %}">{{ tag.name }}</a>
-    {% if not forloop.last %}, {% endif %}
-  </b>
-  {% endfor %}
-</p>
+      Etiquetas:
+      {% for tag in post.tags.all %}
+      <b>
+        <a href="{% url 'blogc:tags' tag.slug %}">{{ tag.name }}</a>
+        {% if not forloop.last %}, {% endif %}
+      </b>
+      {% endfor %}
+    </p>
   </span>
 </div><br>
 {% endfor %}
 {% include "pagination.html" with page=posts %}
+
 {% else %}
-<div style="background-color:gray; padding: 5px; border-radius: 3px">
-  <b>Ainda nenhuma publicacao foi efetuada!</b>
+<div style="background-color:gray; padding: 20px; border-radius: 3px">
+  <li>
+    <b>Ainda nenhuma publicacao foi efetuada!</b>
+  </li>
 </div>
 {% endif %}
 
