@@ -26,21 +26,23 @@ SECRET_KEY = 'django-insecure-@u-ib9mavd+)lldoox!3byx1mfg@0zm12bgb5-dm%85!6yr@zq
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+SITE_ID = 1
 
 # Application definition
 
 INSTALLED_APPS = [
-    'usuarios',
-    'blogc',
-    'bootstrap4',
-    'taggit',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usuarios',
+    'blogc',
+    'bootstrap4',
+    'taggit',
 ]
 
 MIDDLEWARE = [
