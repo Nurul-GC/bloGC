@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load blogc_tags %}
 {% load static %}
 
 <html lang="pt">
@@ -82,12 +83,14 @@
     </ul>
   </div>
 </nav>
-<main role="main" class="container bg-light" style="padding: 10px; border-radius: 5px;">
+<main role="main" class="container bg-light mr-auto" style="padding: 10px; border-radius: 5px;">
   <div class="pb-2 mb-2 border-bottom">
     {% block page_header %}{% endblock page_header %}
   </div>
   <div>{% block content %}{% endblock content %}</div>
-</main><br>
+</main>
+<div class="menu-bar bg-light ml-auto"></div>
+<br>
 <footer class="bg-light text-center border" style="padding:5px; position: bottom;">
     <small>
       Direitos Autorais Reservados &copy; 2021
